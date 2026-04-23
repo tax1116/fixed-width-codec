@@ -51,7 +51,7 @@ dependencies {
 
 **아티팩트 구성**:
 - **`-core`**: 어노테이션 + 런타임 기저 클래스. 런타임 classpath (의존성: Kotlin stdlib만)
-- **`-processor`**: KSP 프로세서. 빌드 타임 classpath (kotlinpoet 의존. 런타임엔 안 딸려감)
+- **`-processor`**: KSP 프로세서. 빌드 타임 classpath (kotlinpoet 의존.)
 
 ## 시작하기
 
@@ -134,7 +134,6 @@ val parsed: AccountBalance = AccountBalanceRecordMapper.deserialize(bytes)
 - [ ] v0.2 — `BigDecimal` + implied decimal 지원
 - [ ] v0.2 — `LocalDate` / `LocalDateTime` + pattern 지원
 - [ ] v0.3 — `@Record(code = "...")` 기반 레코드 variant dispatch + 컴파일 타임 레지스트리
-- [ ] TBD — 전문통신 TCP 클라이언트 (별도 저장소 예정)
 
 ## 라이선스
 

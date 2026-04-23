@@ -12,12 +12,16 @@ concurrency:
 
 jobs:
   build:
-    name: Build & Test (JDK ${{ matrix.jdk }})
+    # Gradle 9.x requires JDK 17+ to run itself, even though our compile
+    # toolchain targets JVM 11. The compiled library remains JVM 11
+    # runtime-compatible. To verify that, a separate downstream consumer
+    # test on JDK 11 can be added later.
+    name: Build & Test (Gradle JDK ${{ matrix.jdk }})
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
-        jdk: [11, 17, 21]
+        jdk: [17, 21]
 
     steps:
       - name: Checkout
